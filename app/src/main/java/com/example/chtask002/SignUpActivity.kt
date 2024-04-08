@@ -12,9 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 
 class SignUpActivity : AppCompatActivity() {
 
-    private val viewModel: SignUpViewModel by lazy{
+    private val viewModel: SignUpViewModel by lazy {
         ViewModelProvider(this)[SignUpViewModel::class.java]
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -99,7 +100,7 @@ class SignUpActivity : AppCompatActivity() {
 
         // 회원가입 버튼 클릭 이벤트 처리... 코드 추가해야 함
         joinButton.setOnClickListener {
-            Toast.makeText(this,"성공", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show()
             //추가하기...
         }
     }

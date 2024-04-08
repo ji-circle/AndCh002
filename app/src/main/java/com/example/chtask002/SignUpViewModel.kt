@@ -59,13 +59,14 @@ class SignUpViewModel : ViewModel() {
     }
 
     fun checkAll() {
+        //null이면 빈 문자열로 대체하게
         val username = _username.value.orEmpty()
         val userAdd = _emailAdd.value.orEmpty()
         val userDom = _emailDom.value.orEmpty()
         val password = _pw.value.orEmpty()
         val passwordCheck = _pwCheck.value.orEmpty()
 
-        _usernameError.value = if (username.isEmpty()) "이름를 입력하세요." else null
+        _usernameError.value = if (username.isEmpty()) "이름을 입력하세요." else null
         _emailAddError.value = if (userAdd.isEmpty()) "이메일을 입력하세요." else null
         _emailDomError.value = if (userDom.isEmpty()) "도메인을 입력하세요." else null
 
@@ -87,6 +88,8 @@ class SignUpViewModel : ViewModel() {
 
 
     private fun checkStatus() {
+        // = 해당 LiveData가 오류 메시지를 포함하고 있는지 여부(값이 null이거나 빈 문자열인지 등) 확인
+        // 에러 메시지가 없거나 비어있음 -> true를 반환
         val isName = _usernameError.value.isNullOrEmpty()
         val isAdd = _emailAddError.value.isNullOrEmpty()
         val isDom = _emailDomError.value.isNullOrEmpty()
