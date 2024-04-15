@@ -110,5 +110,6 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun checkAll() {
         viewModel.checkAll()
+        //이거 말고 when 사용해서 각각 해도 됨...
     }
 }
