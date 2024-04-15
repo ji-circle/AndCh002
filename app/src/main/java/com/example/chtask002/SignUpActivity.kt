@@ -81,8 +81,11 @@ class SignUpActivity : AppCompatActivity() {
             if (errorMessage != null) {
                 pwError.visibility = View.VISIBLE
                 pwError.text = errorMessage
+                pwError.isEnabled = true
             } else {
-                pwError.visibility = View.INVISIBLE
+                //pwError.visibility = View.INVISIBLE
+                pwError.isEnabled = false
+                pwError.visibility = View.VISIBLE
             }
         }
         viewModel.checkPwError.observe(this) { errorMessage ->
